@@ -42,7 +42,7 @@ import com.example.a22698.R
 @Preview(showBackground = true)
 @Composable
 
-fun Juego(){
+fun JuegoGameover(){
     val Poppins = FontFamily(Font(R.font.poppinsbold, FontWeight.Bold),
         Font(R.font.poppinsthin, FontWeight.Thin),
         Font(R.font.poppinsblack, FontWeight.Black),
@@ -57,71 +57,92 @@ fun Juego(){
         .fillMaxSize()
         .background(color = Color(0xFFFAF8F0))){
         Column() {
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(40.dp))
             Row(verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
-                    .size(height = 80.dp, width = 400.dp)
+                    .size(height = 50.dp, width = 400.dp)
                     .padding(start = 15.dp, end = 15.dp)) {
-                Icon(imageVector = Icons.Default.Dehaze,
-                    contentDescription = "Tres lineas",
-                    modifier = Modifier
-                        .size(30.dp)
-                        .padding(start = 5.dp),
-                    tint = Color(0xFF756452)
-                )
-                Text(text = "2048",
+                Text(text = "Game over",
                     fontSize = 40.sp,
                     color = Color(0xFF756452),
                     fontWeight = FontWeight.Bold,
                     fontFamily = Poppins
                 )
-                Icon(imageVector = Icons.Default.RestartAlt,
-                    contentDescription = "Reiniciar",
-                    modifier = Modifier
-                        .size(35.dp)
-                        .padding(5.dp),
-                    tint = Color(0xFF756452)
+            }
+
+            Row(verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .size(height = 20.dp, width = 400.dp)
+                    .padding(start = 15.dp, end = 15.dp)) {
+                Text(text = "7000 points scored in 476 moves.",
+                    fontSize = 10.sp,
+                    color = Color(0xFF756452),
+                    fontWeight = FontWeight.Normal,
+                    fontFamily = Poppins
+                )
+                Text(text = " 2 powerups used:",
+                    fontSize = 10.sp,
+                    color = Color(0xFF756452),
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = Poppins
                 )
             }
+            Spacer(modifier = Modifier.height(10.dp))
             Row(verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceAround,
+                horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .size(height = 50.dp, width = 400.dp)
                     .padding(start = 15.dp, end = 15.dp)) {
-                Row(verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier
-                        .background(color = Color(0xFFEAE7DA),shape = RoundedCornerShape(size = 12.dp))
-                        .size(height = 30.dp, width = 170.dp)
-                        .padding(start = 10.dp, end = 10.dp)) {
-                    Text(text = "SCORE",
-                        color = Color(0xFF988876),
-                        fontFamily = Poppins,
-                        fontWeight = FontWeight.Bold)
-                    Text(text = "1692",
-                        color = Color(0xFF988876),
-                        fontFamily = Poppins,
-                        fontWeight = FontWeight.Bold)
-                }
-                Row(verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier
-                        .border(width = 2.dp, color = Color(0xFFEAE7DA), shape = RoundedCornerShape(size = 12.dp))
-                        .background(color = Color(0xFFFAF8F0))
-                        .size(height = 30.dp, width = 170.dp)
-                        .padding(start = 10.dp, end = 10.dp)) {
-                    Text(text = "BEST",
-                        color = Color(0xFF988876),
-                        fontFamily = Poppins,
-                        fontWeight = FontWeight.Bold)
-                    Text(text = "7000",
-                        color = Color(0xFF988876),
-                        fontFamily = Poppins,
-                        fontWeight = FontWeight.Bold)
+                    Box(modifier = Modifier
+                        .size(size = 50.dp)){
+                        Box(contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .size(width = 40.dp, height = 40.dp)
+                                .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(8.dp))){
+                            Icon(imageVector = Icons.Default.ArrowBack,
+                                contentDescription= "atrás",
+                                tint = Color(0xFFFBFAF9))
+                        }
+                        Box(contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .padding(start = 30.dp,top = 30.dp)
+                                .size(size = 20.dp)
+                                .background(color = Color(0xFFF8F6EE), shape = RoundedCornerShape(10.dp))){
+                            Text(text = "3",
+                                fontSize = 15.sp,
+                                fontFamily = Poppins,
+                                color = Color(0xFFBAAC9A),
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                Box(modifier = Modifier
+                    .size(size = 50.dp)){
+                    Box(contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .size(width = 40.dp, height = 40.dp)
+                            .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(8.dp))){
+                        Icon(imageVector = Icons.Default.SwapVert,
+                            contentDescription= "atrás",
+                            tint = Color(0xFFFBFAF9))
+                    }
+                    Box(contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .padding(start = 30.dp,top = 30.dp)
+                            .size(size = 20.dp)
+                            .background(color = Color(0xFFF8F6EE), shape = RoundedCornerShape(10.dp))){
+                        Text(text = "2",
+                            fontSize = 15.sp,
+                            fontFamily = Poppins,
+                            color = Color(0xFFBAAC9A),
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                 }
             }
-            Spacer(modifier = Modifier.height(70.dp))
+            Spacer(modifier = Modifier.height(60.dp))
 
             Box(modifier = Modifier
                     .align(Alignment.CenterHorizontally)
@@ -138,8 +159,8 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))) {
-                                Text(text = "4",
+                                    .background(color = Color(0xFFEFE4DA), shape = RoundedCornerShape(size = 10.dp))) {
+                                Text(text = "2",
                                     color = Color(0xFF756452),
                                     fontFamily = Poppins,
                                     fontSize = 25.sp,
@@ -150,7 +171,7 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .background(color = Color(0xFFF6785A), shape = RoundedCornerShape(size = 10.dp))){
+                                    .background(color = Color(0xFFF67759), shape = RoundedCornerShape(size = 10.dp))){
                                 Text(text = "32",
                                     color = Color(0xFFFFFFFF),
                                     fontFamily = Poppins,
@@ -162,60 +183,9 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .background(color = Color(0xFFF1AD72), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "8",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
-                            Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF6785A), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "32",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
-                        }
-                    }
-                    Column(modifier = Modifier
-                        .size(width = 300.dp, height = 74.dp),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.Start) {
-                        Spacer(modifier = Modifier.height(2.dp))
-                        Row() {
-                            Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
-                            }
-                            Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF69462), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "16",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
-                            Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF55A37), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "64",
-                                    color = Color(0xFFFFFFFF),
+                                    .background(color = Color(0xFFEFE4DA), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "2",
+                                    color = Color(0xFF756452),
                                     fontFamily = Poppins,
                                     fontSize = 25.sp,
                                     fontWeight = FontWeight.Bold
@@ -245,15 +215,8 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
-                            }
-                            Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFEFE4DA), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "2",
+                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))) {
+                                Text(text = "4",
                                     color = Color(0xFF756452),
                                     fontFamily = Poppins,
                                     fontSize = 25.sp,
@@ -264,8 +227,8 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .background(color = Color(0xFFF2CE53), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "128",
+                                    .background(color = Color(0xFFF55A36), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "64",
                                     color = Color(0xFFFFFFFF),
                                     fontFamily = Poppins,
                                     fontSize = 25.sp,
@@ -276,8 +239,76 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .background(color = Color(0xFFF55A37), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "64",
+                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "4",
+                                    color = Color(0xFF756452),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(7.5.dp))
+                            Box(contentAlignment = Alignment.Center,
+                                modifier = Modifier
+                                    .size(65.dp)
+                                    .background(color = Color(0xFFF2CE56), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "128",
+                                    color = Color(0xFFFFFFFF),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+                    }
+                    Column(modifier = Modifier
+                        .size(width = 300.dp, height = 74.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.Start) {
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Row() {
+                            Spacer(modifier = Modifier.width(7.5.dp))
+                            Box(contentAlignment = Alignment.Center,
+                                modifier = Modifier
+                                    .size(65.dp)
+                                    .background(color = Color(0xFFF1AE71), shape = RoundedCornerShape(size = 10.dp))) {
+                                Text(text = "8",
+                                    color = Color(0xFFFFFFFF),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(7.5.dp))
+                            Box(contentAlignment = Alignment.Center,
+                                modifier = Modifier
+                                    .size(65.dp)
+                                    .background(color = Color(0xFFF4CB48), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "256",
+                                    color = Color(0xFFFFFFFF),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(7.5.dp))
+                            Box(contentAlignment = Alignment.Center,
+                                modifier = Modifier
+                                    .size(65.dp)
+                                    .background(color = Color(0xFFF6C93A), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "512",
+                                    color = Color(0xFFFFFFFF),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(7.5.dp))
+                            Box(contentAlignment = Alignment.Center,
+                                modifier = Modifier
+                                    .size(65.dp)
+                                    .background(color = Color(0xFFF1AE71), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "8",
                                     color = Color(0xFFFFFFFF),
                                     fontFamily = Poppins,
                                     fontSize = 25.sp,
@@ -296,21 +327,19 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))) {
+                                Text(text = "4",
+                                    color = Color(0xFF756452),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
-                            }
-                            Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF1AD72), shape = RoundedCornerShape(size = 10.dp))){
+                                    .background(color = Color(0xFFF1AE71), shape = RoundedCornerShape(size = 10.dp))) {
                                 Text(text = "8",
                                     color = Color(0xFFFFFFFF),
                                     fontFamily = Poppins,
@@ -322,8 +351,25 @@ fun Juego(){
                             Box(contentAlignment = Alignment.Center,
                                 modifier = Modifier
                                     .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                                    .background(color = Color(0xFFEFE4DA), shape = RoundedCornerShape(size = 10.dp))){
+                                Text(text = "2",
+                                    color = Color(0xFF756452),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(7.5.dp))
+                            Box(contentAlignment = Alignment.Center,
+                                modifier = Modifier
+                                    .size(65.dp)
+                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))) {
+                                Text(text = "4",
+                                    color = Color(0xFF756452),
+                                    fontFamily = Poppins,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
                             }
 
 
@@ -333,115 +379,46 @@ fun Juego(){
             }
             Spacer(modifier = Modifier.height(20.dp))
 
-            Box(modifier = Modifier
-                .size(width = 180.dp, height = 65.dp)
-                .align(Alignment.CenterHorizontally)
-                .background(color = Color(0xFFEAE7DA), shape = RoundedCornerShape(16.dp))){
-                Row() {
-                    Spacer(modifier = Modifier.width(5.dp))
-                    Column(modifier = Modifier
-                        .size(width = 50.dp, height = 65.dp)) {
-                        Column(modifier = Modifier
-                            .padding(start = 5.dp, top = 2.dp)
-                            .size(width = 50.dp, height = 50.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center) {
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(width = 40.dp, height = 40.dp)
-                                    .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(8.dp))){
-                                Icon(imageVector = Icons.Default.ArrowBack,
-                                    contentDescription= "atrás",
-                                    tint = Color(0xFFFBFAF9))
-                            }
-                        }
-                        Box(contentAlignment = Alignment.Center,
-                            modifier = Modifier
-                                .size(width = 65.dp, height = 5.dp)){
-                            Row() {
-                                Spacer(modifier = Modifier.width(6.dp))
-                                Box(modifier = Modifier
-                                    .size(width = 15.dp, height = 3.dp)
-                                    .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(1.dp))){
-                                }
-                                Spacer(modifier = Modifier.width(5.dp))
-                                Box(modifier = Modifier
-                                    .size(width = 15.dp, height = 3.dp)
-                                    .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(1.dp))){
-                                }
-                            }
-                        }
-
-                    }
-                    Spacer(modifier = Modifier.width(3.dp))
-                    Column(modifier = Modifier
-                        .size(width = 55.dp, height = 65.dp)) {
-                        Column(modifier = Modifier
-                            .padding(start = 5.dp, top = 2.dp)
-                            .size(width = 50.dp, height = 50.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center) {
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(width = 40.dp, height = 40.dp)
-                                    .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(8.dp))){
-                                Icon(imageVector = Icons.Default.SwapVert,
-                                    contentDescription= "cambiar",
-                                    tint = Color(0xFFFBFAF9))
-                            }
-                        }
-                        Box(contentAlignment = Alignment.Center,
-                            modifier = Modifier
-                                .size(width = 50.dp, height = 5.dp)){
-                            Row() {
-                                Spacer(modifier = Modifier.width(10.dp))
-                                Box(modifier = Modifier
-                                    .size(width = 15.dp, height = 3.dp)
-                                    .background(color = Color(0xFFBAAC9A), shape = RoundedCornerShape(1.dp))){
-                                }
-                                Spacer(modifier = Modifier.width(5.dp))
-                                Box(modifier = Modifier
-                                    .size(width = 15.dp, height = 3.dp)
-                                    .background(color = Color(0xFFDCD5C6), shape = RoundedCornerShape(1.dp))){
-                                }
-                            }
-                        }
-                    }
-                    Spacer(modifier = Modifier.width(3.dp))
-                    Column(modifier = Modifier
-                        .size(width = 55.dp, height = 65.dp)) {
-                        Column(modifier = Modifier
-                            .padding(start = 5.dp, top = 2.dp)
-                            .size(width = 50.dp, height = 50.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center) {
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(width = 40.dp, height = 40.dp)
-                                    .background(color = Color(0xFFDCD5C6), shape = RoundedCornerShape(8.dp))){
-                                Icon(imageVector = Icons.Default.Bento,
-                                    contentDescription= "Agregar",
-                                    tint = Color(0xFFFBFAF9))
-                            }
-                        }
-                        Box(contentAlignment = Alignment.Center,
-                            modifier = Modifier
-                                .size(width = 50.dp, height = 5.dp)){
-                            Row() {
-                                Spacer(modifier = Modifier.width(10.dp))
-                                Box(modifier = Modifier
-                                    .size(width = 15.dp, height = 3.dp)
-                                    .background(color = Color(0xFFDCD5C6), shape = RoundedCornerShape(1.dp))){
-                                }
-                                Spacer(modifier = Modifier.width(5.dp))
-                                Box(modifier = Modifier
-                                    .size(width = 15.dp, height = 3.dp)
-                                    .background(color = Color(0xFFDCD5C6), shape = RoundedCornerShape(1.dp))){
-                                }
-                            }
-                        }
-                    }
+            Row(verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceAround,
+                modifier = Modifier
+                    .size(height = 50.dp, width = 400.dp)
+                    .padding(start = 15.dp, end = 15.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier
+                        .background(color = Color(0xFF998B7C),shape = RoundedCornerShape(size = 12.dp))
+                        .size(height = 30.dp, width = 170.dp)
+                        .padding(start = 10.dp, end = 10.dp)) {
+                    Text(text = "Play Again",
+                        color = Color(0xFFF0EEEC),
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Normal)
                 }
+                Row(verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier
+                        .border(width = 2.dp, color = Color(0xFFCAC0B3), shape = RoundedCornerShape(size = 12.dp))
+                        .background(color = Color(0xFFFAF8F0))
+                        .size(height = 30.dp, width = 170.dp)
+                        .padding(start = 10.dp, end = 10.dp)) {
+                    Text(text = "Undo",
+                        color = Color(0xFFCAC0B3),
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Normal)
+                }
+            }
+            Row(verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .size(height = 20.dp, width = 400.dp)
+                    .padding(start = 15.dp, end = 15.dp)) {
+                Text(text = "You´r out of undos",
+                    fontSize = 10.sp,
+                    color = Color(0xFFC0B3A3),
+                    fontWeight = FontWeight.Normal,
+                    fontFamily = Poppins
+                )
             }
         }
     }
