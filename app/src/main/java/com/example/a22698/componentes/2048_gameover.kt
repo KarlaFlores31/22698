@@ -405,7 +405,7 @@ fun JuegoGameover(){
                     Text(text = "Undo",
                         color = Color(0xFFCAC0B3),
                         fontFamily = Poppins,
-                        fontWeight = FontWeight.Normal)
+                        fontWeight = FontWeight.Bold)
                 }
             }
             Row(verticalAlignment = Alignment.CenterVertically,
