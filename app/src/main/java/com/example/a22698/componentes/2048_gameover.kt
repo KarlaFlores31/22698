@@ -413,7 +413,7 @@ fun JuegoGameover(){
                 modifier = Modifier
                     .size(height = 20.dp, width = 400.dp)
                     .padding(start = 15.dp, end = 15.dp)) {
-                Text(text = "You´r out of undos",
+                Text(text = "You´re out of undos",
                     fontSize = 10.sp,
                     color = Color(0xFFC0B3A3),
                     fontWeight = FontWeight.Normal,
