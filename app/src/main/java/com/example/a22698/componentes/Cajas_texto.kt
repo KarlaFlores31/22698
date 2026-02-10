@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ModifierInfo
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.a22698.matematicas.Numbertextfield
 
 @Preview(showBackground = true)
 @Composable
@@ -57,34 +58,12 @@ fun CajasTexto (){
         verticalArrangement = Arrangement.Center) {
         Row(modifier = Modifier
             .fillMaxWidth()) {
-            Column(modifier = Modifier.
-            fillMaxWidth()
-                .weight(weight = 2f)){
-                Text(text = "Ingresa un número")
-                TextField(value = number,
-                    placeholder = {Text(text = "Número")},
-                    shape = RoundedCornerShape(10.dp),
-                    onValueChange = {
-                        textoEscrito ->
-                        //val uper = textoEscrito.uppercase()
-                        if (textoEscrito.toIntOrNull() != null){
-                            number = textoEscrito.toInt().toString()
-                        }
-                    }
-                )
+            Numbertextfield(modificador = Modifier .fillMaxWidth().weight(2f)){
+                number = it
             }
             Spacer(modifier = Modifier.fillMaxWidth().weight(weight = 1f))
-            Column(modifier = Modifier.
-            fillMaxWidth()
-                .weight(weight = 2f)){
-                Text(text = "Ingresa otro número")
-                TextField(value = number2,
-                    onValueChange = {
-                        textoEscrito ->
-                        if (textoEscrito.toIntOrNull() != null){
-                            number2 = textoEscrito.toInt().toString()
-                        }
-                    })
+            Numbertextfield(modificador = Modifier .fillMaxWidth().weight(2f)){
+                number2 = it
             }
         }
         Spacer(modifier = Modifier.height(height = 16.dp))
