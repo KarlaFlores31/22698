@@ -25,6 +25,10 @@ import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -38,11 +42,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.a22698.R
+import com.example.a22698.matematicas.Best
+import com.example.a22698.matematicas.Cambiarnumero
+import com.example.a22698.matematicas.Score
 
 @Preview(showBackground = true)
 @Composable
 
-fun Juego(){
+fun Juegoconfuncionalidad(){
     val Poppins = FontFamily(Font(R.font.poppinsbold, FontWeight.Bold),
         Font(R.font.poppinsthin, FontWeight.Thin),
         Font(R.font.poppinsblack, FontWeight.Black),
@@ -52,6 +59,26 @@ fun Juego(){
         Font(R.font.poppinsextralight, FontWeight.ExtraLight),
         Font(R.font.poppinsregular, FontWeight.Normal),
         Font(R.font.poppinssemibold, FontWeight.SemiBold))
+
+    var uno by remember { mutableStateOf(value = 0)}
+    var dos by remember { mutableStateOf(value = 0)}
+    var tres by remember { mutableStateOf(value = 0)}
+    var cuatro by remember { mutableStateOf(value = 0)}
+    var cinco by remember { mutableStateOf(value = 0)}
+    var seis by remember { mutableStateOf(value = 0)}
+    var siete by remember { mutableStateOf(value = 0)}
+    var ocho by remember { mutableStateOf(value = 0)}
+    var nueve by remember { mutableStateOf(value = 0)}
+    var diez by remember { mutableStateOf(value = 0)}
+    var once by remember { mutableStateOf(value = 0)}
+    var doce by remember { mutableStateOf(value = 0)}
+    var trece by remember { mutableStateOf(value = 0)}
+    var catorce by remember { mutableStateOf(value = 0)}
+    var quince by remember { mutableStateOf(value = 0)}
+    var dieciseis by remember { mutableStateOf(value = 0)}
+
+    var score by remember { mutableStateOf(value = 0) }
+    var best by remember { mutableStateOf(value = 0) }
 
     Box(modifier = Modifier
         .fillMaxSize()
@@ -70,7 +97,6 @@ fun Juego(){
                         .padding(start = 5.dp),
                     tint = Color(0xFF756452)
                 )
-
                 Text(text = "2048",
                     fontSize = 40.sp,
                     color = Color(0xFF756452),
@@ -100,7 +126,7 @@ fun Juego(){
                         color = Color(0xFF988876),
                         fontFamily = Poppins,
                         fontWeight = FontWeight.Bold)
-                    Text(text = "1692",
+                    Text(text = score.toString(),
                         color = Color(0xFF988876),
                         fontFamily = Poppins,
                         fontWeight = FontWeight.Bold)
@@ -116,7 +142,7 @@ fun Juego(){
                         color = Color(0xFF988876),
                         fontFamily = Poppins,
                         fontWeight = FontWeight.Bold)
-                    Text(text = "7000",
+                    Text(text = best.toString(),
                         color = Color(0xFF988876),
                         fontFamily = Poppins,
                         fontWeight = FontWeight.Bold)
@@ -136,52 +162,28 @@ fun Juego(){
                         Spacer(modifier = Modifier.height(2.dp))
                         Row() {
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))) {
-                                Text(text = "4",
-                                    color = Color(0xFF756452),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                uno = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
+                                best = Best(uno,best)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF6785A), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "32",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                dos = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
+                                best = Best(dos,best)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF1AD72), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "8",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                tres = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
+                                best = Best(tres,best)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF6785A), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "32",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                cuatro = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
+                                best = Best(cuatro,best)
                             }
                         }
                     }
@@ -192,47 +194,24 @@ fun Juego(){
                         Spacer(modifier = Modifier.height(2.dp))
                         Row() {
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                            Cambiarnumero(){
+                                cinco = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF69462), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "16",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                seis = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF55A37), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "64",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                siete = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFEBD9B6), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "4",
-                                    color = Color(0xFF756452),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                ocho = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                         }
                     }
@@ -243,47 +222,24 @@ fun Juego(){
                         Spacer(modifier = Modifier.height(2.dp))
                         Row() {
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                            Cambiarnumero(){
+                                nueve = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFEFE4DA), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "2",
-                                    color = Color(0xFF756452),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                diez = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF2CE53), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "128",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                once = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF55A37), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "64",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                doce = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                         }
                     }
@@ -294,37 +250,24 @@ fun Juego(){
                         Spacer(modifier = Modifier.height(2.dp))
                         Row() {
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                            Cambiarnumero(){
+                                trece = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                            Cambiarnumero(){
+                                catorce = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .background(color = Color(0xFFF1AD72), shape = RoundedCornerShape(size = 10.dp))){
-                                Text(text = "8",
-                                    color = Color(0xFFFFFFFF),
-                                    fontFamily = Poppins,
-                                    fontSize = 25.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                            Cambiarnumero(){
+                                quince = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
                             Spacer(modifier = Modifier.width(7.5.dp))
-                            Box(contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .size(65.dp)
-                                    .padding(1.5.dp)
-                                    .background(color = Color(0xFFBDAC98), shape = RoundedCornerShape(size = 10.dp))) {
+                            Cambiarnumero(){
+                                dieciseis = it
+                                score = Score(uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis)
                             }
 
 
