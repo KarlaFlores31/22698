@@ -27,14 +27,14 @@ import com.example.a22698.R
 fun sumarnumero(valor : Int): Int {
     if (valor == 0) {
         return 2
-    } else if (valor < 2048) {
+    } else if (valor < 2049) {
         return valor + valor
     }
     return valor
 }
 
 @Composable
-fun Cambiarnumero(suma:(Int)-> Unit){
+fun Cambiarnumero(suma:(Int)-> Unit, activo:(Boolean)-> Unit){
     val Poppins = FontFamily(Font(R.font.poppinsbold, FontWeight.Bold),
         Font(R.font.poppinsthin, FontWeight.Thin),
         Font(R.font.poppinsblack, FontWeight.Black),
@@ -46,6 +46,7 @@ fun Cambiarnumero(suma:(Int)-> Unit){
         Font(R.font.poppinssemibold, FontWeight.SemiBold))
 
     var numero by remember { mutableStateOf(value = 0)}
+    var estado by remember { mutableStateOf(value = true)}
 
     if (numero == 0) {
         Button(onClick = {
@@ -188,7 +189,7 @@ fun Cambiarnumero(suma:(Int)-> Unit){
             modifier = Modifier
                 .size(65.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFF4CB48),
+                containerColor = Color(0xFFF8CF49),
                 contentColor = Color(0xFFFFFFFF)),
             shape = RoundedCornerShape(size = 10.dp),
             contentPadding = PaddingValues(0.dp)
@@ -206,7 +207,7 @@ fun Cambiarnumero(suma:(Int)-> Unit){
             modifier = Modifier
                 .size(65.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFF6C93A),
+                containerColor = Color(0xFFFCCD36),
                 contentColor = Color(0xFFFFFFFF)),
             shape = RoundedCornerShape(size = 10.dp),
             contentPadding = PaddingValues(0.dp)
@@ -237,9 +238,12 @@ fun Cambiarnumero(suma:(Int)-> Unit){
         }
         suma(numero)
     }
-    else if (numero == 2048){
+    else{
         Button(onClick = {
-            numero = sumarnumero(numero) },
+            numero = sumarnumero(numero)
+            estado = false
+            activo(estado)
+            numero = numero - 2048},
             modifier = Modifier
                 .size(65.dp),
             colors = ButtonDefaults.buttonColors(
@@ -262,7 +266,9 @@ fun Cambiarnumero(suma:(Int)-> Unit){
 @Composable
 fun CambiarnumerosPreview(){
     var suma by remember { mutableStateOf(value = 0) }
-    Cambiarnumero() { suma = it }
-
+    var activo by remember { mutableStateOf(value = true) }
+    Cambiarnumero({ suma = it }, {activo = it})
+    Text(text = suma.toString())
+    Text(text = activo.toString())
 
 }
