@@ -8,9 +8,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -19,11 +22,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.a22698.R
 import com.example.a22698.matematicas.Best
 import com.example.a22698.matematicas.Cambiarnumero
@@ -68,6 +73,7 @@ fun Juegoconfuncionalidad(){
     var irJuego by remember { mutableStateOf(false) }
     var perderJuego by remember { mutableStateOf(value = false) }
     var reiniciar by remember { mutableStateOf(value = false) }
+    var nombre by remember { mutableStateOf(value = "") }
 
 
     if(irJuego){
@@ -81,7 +87,7 @@ fun Juegoconfuncionalidad(){
             .fillMaxSize()
             .background(color = Color(0xFFFAF8F0))){
             Column() {
-                Perder(score,best,activo)
+                Perder(score,best,activo,nombre)
 
                 Spacer(modifier = Modifier.height(70.dp))
 
@@ -224,10 +230,9 @@ fun Juegoconfuncionalidad(){
                 }
                 Spacer(modifier = Modifier.height(20.dp))
 
-                Otravez({reiniciar = it},{irJuego = it}, {perderJuego = it},activo, modifier = Modifier
-                    .size(width = 180.dp, height = 65.dp)
-                    .align(Alignment.CenterHorizontally)
-                    .background(color = Color(0xFFEAE7DA), shape = RoundedCornerShape(16.dp)))
+                Otravez({reiniciar = it},{irJuego = it}, {perderJuego = it}, {nombre = it},activo, modifier = Modifier
+                    .size(width = 180.dp, height = 130.dp)
+                    .align(Alignment.CenterHorizontally))
             }
         }
     }

@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.sp
 import com.example.a22698.R
 
 @Composable
-fun Perder(score:(Int),best:(Int),estado:(Boolean)){
+fun Perder(score:(Int),best:(Int),estado:(Boolean),nombre:(String)){
     val Poppins = FontFamily(Font(R.font.poppinsbold, FontWeight.Bold),
         Font(R.font.poppinsthin, FontWeight.Thin),
         Font(R.font.poppinsblack, FontWeight.Black),
@@ -60,7 +60,7 @@ fun Perder(score:(Int),best:(Int),estado:(Boolean)){
             modifier = Modifier
                 .size(height = 20.dp, width = 400.dp)
                 .padding(start = 15.dp, end = 15.dp)) {
-            Text(text = "$score points scored",
+            Text(text = "${score.toString()} points scored. $nombre sigue participando",
                 fontSize = 10.sp,
                 color = Color(0xFF756452),
                 fontWeight = FontWeight.Normal,
