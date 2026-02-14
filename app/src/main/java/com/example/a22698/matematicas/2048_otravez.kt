@@ -58,8 +58,9 @@ fun Otravez(reiniciar:(Boolean) -> Unit, pantalla1:(Boolean) ->Unit, pantalla2:(
 
     if (estado){
         Box(modifier = modifier){
-            Column() {
-                Row(modifier = Modifier
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Row(horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier
                     .size(width = 180.dp, height = 65.dp)
                     .background(color = Color(0xFFEAE7DA), shape = RoundedCornerShape(16.dp))) {
                     Spacer(modifier = Modifier.width(5.dp))
@@ -180,12 +181,12 @@ fun Otravez(reiniciar:(Boolean) -> Unit, pantalla1:(Boolean) ->Unit, pantalla2:(
                 Spacer(modifier = Modifier.height(10.dp))
 
                 Box(modifier = Modifier
-                    .size(width = 200.dp, height = 40.dp)){
+                    .size(width = 300.dp, height = 40.dp)){
                     Row(verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center,
                         modifier = Modifier
-                            .size(width = 200.dp, height = 40.dp)) {
-                        Text(text = "Nombre: ",
+                            .size(width = 300.dp, height = 40.dp)) {
+                        Text(text = "Introduce tu nombre: ",
                             fontFamily = Poppins,
                             color = Color(0xFF756452),
                             fontWeight = FontWeight.Bold)

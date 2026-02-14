@@ -231,7 +231,7 @@ fun Juegoconfuncionalidad(){
                 Spacer(modifier = Modifier.height(20.dp))
 
                 Otravez({reiniciar = it},{irJuego = it}, {perderJuego = it}, {nombre = it},activo, modifier = Modifier
-                    .size(width = 180.dp, height = 130.dp)
+                    .size(width = 300.dp, height = 130.dp)
                     .align(Alignment.CenterHorizontally))
             }
         }
