@@ -34,13 +34,15 @@ import com.example.a22698.R
 @Preview(showBackground = true)
 @Composable
 fun ProductoPreview(){
+    val computadora = Product_model(imagenproduct = R.drawable.gato_lanza_tomate, nombreproducto = "Gato tomatazo", calificacion = 5.0f, precio = 499, entrega = "el domingo")
+    Productovista(computadora){
 
-    Productovista(imagenproduct = R.drawable.gato_lanza_tomate, nombreproducto = "Gato tomatazo", calificacion = 5.0f, precio = 499, entrega = "el domingo")
+    }
 }
 
 @Composable
 
-fun Productovista(imagenproduct: Int, nombreproducto: String, calificacion: Float, precio: Int, entrega: String){
+fun Productovista(producto: Product_model, selected:() -> Unit){
 
 
     //var imagenproduct: Int = R.drawable.gato_lanza_tomate
@@ -48,6 +50,7 @@ fun Productovista(imagenproduct: Int, nombreproducto: String, calificacion: Floa
     //var calificacion: Float = 5.0f
     //var precio: Int = 500
     //var entrega: String = "12 de marzo"
+    var chuich by remember { mutableStateOf(value = false) }
 
     Column(modifier = Modifier
         .fillMaxWidth()) {
@@ -60,20 +63,28 @@ fun Productovista(imagenproduct: Int, nombreproducto: String, calificacion: Floa
                 Image(modifier = Modifier
                     .size(120.dp)
                     .align(Alignment.CenterVertically),
-                    painter = painterResource(imagenproduct),
+                    painter = painterResource(producto.imagenproduct),
                     contentDescription = "imagen de producto")
                 Column(modifier = Modifier.padding(start = 8.dp)) {
                     Spacer(modifier = Modifier.height(5.dp))
-                    Text(text = nombreproducto,
+                    Text(text = producto.nombreproducto,
                         fontSize = 20.sp)
-                    Text(text = "⭐$calificacion estrellas",
+                    Text(text = "⭐${producto.calificacion} estrellas",
                         fontSize = 10.sp)
-                    Text(text = "$$precio",
+                    Text(text = "$${producto.precio}",
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(5.dp))
-                    Text(text = "Llega $entrega")
-                    Button(onClick = {},
+                    Text(text = "Llega ${producto.entrega}")
+                    Button(onClick = {
+                        selected()
+                        if (chuich){
+                            chuich = false
+                        }
+                        else{
+                            chuich = true
+                        }
+                    },
                         colors = ButtonDefaults.buttonColors(
                             contentColor = Color(0xFF000000),
                             containerColor = Color(0xFFFFC107)
@@ -83,6 +94,9 @@ fun Productovista(imagenproduct: Int, nombreproducto: String, calificacion: Floa
                     Spacer(modifier = Modifier.height(5.dp))
                 }
             }
+        }
+        if (chuich) {
+            Text(text = "Agregado al carrito")
         }
     }
 }
