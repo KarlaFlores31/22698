@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a22698.listas.Listvista
+import com.example.a22698.navegacion.NavManager
 import com.example.a22698.ui.theme._22698Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,13 +21,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             _22698Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     /*Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )*/
 
-                    Listvista()
+                    NavManager(innerPadding)
                 }
             }
         }
