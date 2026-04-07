@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -40,6 +41,11 @@ fun WinnerView(studentsVM : StudentsViewModel){
         }) {
             Text(text = "Comenzar")
         }
-        Text(text = "El ganador es...${studentsVM.winner}")
+        if (studentsVM.isLoading) {
+            CircularProgressIndicator()
+            Text("Cargando por favor espere...")
+        }else {
+            Text(text = "El ganador es...${studentsVM.winner}")
+        }
     }
 }
