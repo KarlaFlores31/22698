@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a22698.listas.Listvista
 import com.example.a22698.navegacion.NavManager
+import com.example.a22698.persistencia.ProfileView
 import com.example.a22698.ui.theme._22698Theme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )*/
 
-                    NavManager(innerPadding)
+                    ProfileView()
                 }
             }
         }
