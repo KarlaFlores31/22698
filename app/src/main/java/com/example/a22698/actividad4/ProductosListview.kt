@@ -64,7 +64,7 @@ fun ProductosListview(claveCategoria: String, navController: NavHostController) 
 }
 
 @Composable
-private fun ProductoFila(producto: ProductoMercado) {
+fun ProductoFila(producto: ProductoMercado) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
