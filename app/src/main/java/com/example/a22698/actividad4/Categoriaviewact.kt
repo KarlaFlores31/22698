@@ -2,9 +2,12 @@ package com.example.a22698.actividad4
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -26,34 +29,46 @@ import com.example.a22698.R
 
 @Preview(showBackground = true)
 @Composable
-fun CategoriaactView(){
-    val variables = Mercado_model("ACCESORIOS PARA BELLEZA", R.drawable.belleza)
-    Categoriaact(variables)
+fun CategoriaactView() {
+    val variables = Mercado_model("ACCESORIOS PARA BELLEZA", R.drawable.foto_joven, "belleza")
+    Categoriaact(variables) { }
 }
 
 
 @Composable
-fun Categoriaact(categoria : Mercado_model,selected:() -> Unit){
-    Row(modifier = Modifier.size(width = 300.dp, height = 200.dp)){
-        Card(modifier = Modifier.size(width = 200.dp, height = 100.dp)
-            .background(color = Color.White), shape = RectangleShape,
+fun Categoriaact(categoria: Mercado_model, selected: () -> Unit) {
+    Row(modifier = Modifier.size(width = 300.dp, height = 200.dp)) {
+        Card(
+            modifier = Modifier
+                .size(width = 280.dp, height = 160.dp)
+                .background(color = Color.White)
+                .clickable { selected() },
+            shape = RectangleShape,
             colors = CardDefaults.cardColors(
-            containerColor = Color(0xffffffff))) {
-            Column() {
-                Button(onClick = {
-                    selected() }) {
-
-                }
-                Box(){
-                    Text(text = categoria.texto,
+                containerColor = Color(0xffffffff)
+            )
+        ) {
+            Column {
+                Box {
+                    Text(
+                        text = categoria.texto,
                         fontSize = 10.sp,
-                        modifier = Modifier.
-                    padding(8.dp))
+                        modifier = Modifier.padding(8.dp)
+                    )
                 }
-                Box(){
-                    Image(painter = painterResource(categoria.categoria),
-                        contentDescription = "Belleza categoría",
-                        contentScale = ContentScale.Crop)
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(100.dp)
+                ) {
+                    Image(
+                        painter = painterResource(categoria.categoria),
+                        contentDescription = categoria.texto,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(100.dp),
+                        contentScale = ContentScale.Crop
+                    )
                 }
             }
         }

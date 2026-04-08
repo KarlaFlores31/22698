@@ -11,18 +11,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Preview(showBackground = true)
 @Composable
+fun CategoriasListviewPreview() {
+    val navController = rememberNavController()
+    CategoriasListview(navController = navController)
+}
 
-fun CategoriasListview(){
+@Composable
+fun CategoriasListview(navController: NavHostController) {
     val productoGL = MercadoviewModel()
 
     Row(modifier = Modifier.fillMaxSize()) {
-        LazyRow(modifier = Modifier.background(color = Color.White)
-            .padding(10.dp)){
-            items(items = productoGL.traercategorias()){ categoria ->
-                Categoriaact(categoria)
+        LazyRow(
+            modifier = Modifier
+                .background(color = Color.White)
+                .padding(10.dp)
+        ) {
+            items(items = productoGL.traercategorias()) { categoria ->
+                Categoriaact(categoria) {
+                    navController.navigate("productos/${categoria.clave}")
+                }
             }
         }
     }

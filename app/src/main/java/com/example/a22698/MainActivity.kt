@@ -5,16 +5,17 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+// import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+// import androidx.compose.material3.Text
+// import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.a22698.actividad3.EdadNavManager
-import com.example.a22698.listas.Listvista
-import com.example.a22698.navegacion.NavManager
-import com.example.a22698.persistencia.ProfileView
+// import androidx.compose.ui.tooling.preview.Preview
+import com.example.a22698.actividad4.MercadoNav
+// import com.example.a22698.actividad3.EdadNavManager
+// import com.example.a22698.listas.Listvista
+// import com.example.a22698.navegacion.NavManager
+// import com.example.a22698.persistencia.ProfileView
 import com.example.a22698.ui.theme._22698Theme
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +31,8 @@ class MainActivity : ComponentActivity() {
                     )*/
 
                     // ProfileView()
-                    EdadNavManager(innerPadding = innerPadding)
+                    MercadoNav(innerPadding = innerPadding)
+                    // EdadNavManager(innerPadding = innerPadding)
                 }
             }
         }
