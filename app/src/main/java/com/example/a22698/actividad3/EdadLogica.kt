@@ -7,7 +7,7 @@ data class MensajeEImagen(val mensaje: String, val imagenRes: Int)
 fun mensajeEImagenParaEdad(edad: Int): MensajeEImagen = when (edad) {
     in 0..14 -> MensajeEImagen(
         mensaje = "menor de edad",
-        imagenRes = R.drawable.foto_joven
+        imagenRes = R.drawable.foto_nino
     )
     15 -> MensajeEImagen(
         mensaje = "mayor de edad en Indonesia pero no en mexico",
