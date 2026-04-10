@@ -30,7 +30,7 @@ import com.example.a22698.R
 @Preview(showBackground = true)
 @Composable
 fun CategoriaactView() {
-    val variables = Mercado_model("ACCESORIOS PARA BELLEZA", R.drawable.foto_joven, "belleza")
+    val variables = Mercado_model("ACCESORIOS PARA BELLEZA", R.drawable.belleza, "belleza")
     Categoriaact(variables) { }
 }
 

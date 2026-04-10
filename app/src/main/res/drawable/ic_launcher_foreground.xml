@@ -4,17 +4,17 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Icono propio (tema Edad): letra E estilizada -->
+
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M32,28h12v52H32V28z" />
+        android:pathData="M30,20h12v68H30V20z" />
+
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M32,28h44v12H32V28z" />
+        android:pathData="M42,54L70,20h15L57,54z" />
+
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M32,48h32v12H32V48z" />
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M32,68h44v12H32V68z" />
+        android:pathData="M42,54L57,54L85,88H70z" />
+
 </vector>

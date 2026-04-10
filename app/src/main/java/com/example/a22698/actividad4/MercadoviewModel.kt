@@ -8,18 +8,18 @@ class MercadoviewModel {
         val categoriaslist = mutableListOf<Mercado_model>()
 
         categoriaslist.add(
-            Mercado_model("ACCESORIOS PARA BELLEZA", R.drawable.foto_joven, "belleza")
+            Mercado_model("ACCESORIOS PARA BELLEZA", R.drawable.belleza, "belleza")
         )
-        categoriaslist.add(Mercado_model("PARA DEPORTES", R.drawable.foto_anciano, "deportes"))
+        categoriaslist.add(Mercado_model("PARA DEPORTES", R.drawable.deportes, "deportes"))
         categoriaslist.add(
             Mercado_model(
                 "TU NUEVO ELECTRODOMÉSTICO",
-                R.drawable.ic_launcher_foreground,
+                R.drawable.electrodomesticos,
                 "electrodomesticos"
             )
         )
-        categoriaslist.add(Mercado_model("PARA TU COLECCIÓN", R.drawable.ic_launcher_background, "juguetes"))
-        categoriaslist.add(Mercado_model("PARA TU PERRHIJO", R.drawable.baseline_cruelty_free, "mascotas"))
+        categoriaslist.add(Mercado_model("PARA TU COLECCIÓN", R.drawable.juguetes, "juguetes"))
+        categoriaslist.add(Mercado_model("PARA TU PERRHIJO", R.drawable.mascotas, "mascotas"))
         return categoriaslist
     }
 
@@ -27,7 +27,7 @@ class MercadoviewModel {
         return when (clave) {
             "belleza" -> listOf(
                 ProductoMercado(
-                    R.drawable.foto_joven,
+                    R.drawable.perfume_nautica,
                     "Perfume Nautica Voyage 100 ml — envase original",
                     "$ 899",
                     "Llega gratis mañana",
@@ -35,7 +35,7 @@ class MercadoviewModel {
                     "25% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.ic_launcher_foreground,
+                    R.drawable.protector_roche,
                     "Protector solar La Roche-Posay Anthelios SPF 50+",
                     "$ 549",
                     "Envío $ 59",
@@ -43,7 +43,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.baseline_cruelty_free,
+                    R.drawable.nyx_lip_gloss,
                     "Labial NYX Fat Oil lip drip — tono rojo",
                     "$ 189",
                     "Llega gratis en 2 días",
@@ -51,7 +51,7 @@ class MercadoviewModel {
                     "10% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.foto_joven,
+                    R.drawable.brochas_doce,
                     "Set brochas maquillaje profesional 12 pzas",
                     "$ 320",
                     "Llega gratis mañana",
@@ -59,7 +59,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.foto_anciano,
+                    R.drawable.crema_hidratante,
                     "Crema hidratante facial uso diario 50 g",
                     "$ 275",
                     "Envío $ 49",
@@ -70,15 +70,15 @@ class MercadoviewModel {
 
             "deportes" -> listOf(
                 ProductoMercado(
-                    R.drawable.foto_anciano,
-                    "Bicicleta de montaña rodado 26\" aluminio",
+                    R.drawable.bici_aluminio,
+                    "Bicicleta de montaña rodado 26 aluminio",
                     "$ 6,500",
                     "Llega gratis mañana",
                     true,
                     "35% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.ic_launcher_foreground,
+                    R.drawable.casco_urbano,
                     "Casco urbano ajustable talla M",
                     "$ 450",
                     "Llega gratis en 48 h",
@@ -86,7 +86,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.baseline_cruelty_free,
+                    R.drawable.botella_termica,
                     "Botella térmica deportiva 750 ml",
                     "$ 199",
                     "Envío $ 79",
@@ -94,7 +94,7 @@ class MercadoviewModel {
                     "12% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.foto_joven,
+                    R.drawable.guante_antideslizante,
                     "Guantes de ciclismo con gel antideslizante",
                     "$ 165",
                     "Llega gratis mañana",
@@ -102,7 +102,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.foto_anciano,
+                    R.drawable.carpa_acampar,
                     "Carpa camping 4 personas impermeable",
                     "$ 2,890",
                     "Envío $ 120",
@@ -113,7 +113,7 @@ class MercadoviewModel {
 
             "electrodomesticos" -> listOf(
                 ProductoMercado(
-                    R.drawable.ic_launcher_foreground,
+                    R.drawable.ninja_licuadora,
                     "Licuadora Ninja 1000 W vaso de vidrio",
                     "$ 1,890",
                     "Llega gratis mañana",
@@ -121,7 +121,7 @@ class MercadoviewModel {
                     "30% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.ic_launcher_foreground,
+                    R.drawable.microondas_horno,
                     "Microondas Mirage 0.9 pies cúbicos",
                     "$ 1,450",
                     "Llega gratis en 2 días",
@@ -129,7 +129,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.baseline_cruelty_free,
+                    R.drawable.oster_batidora,
                     "Batidora de mano 5 velocidades",
                     "$ 399",
                     "Envío $ 99",
@@ -137,7 +137,7 @@ class MercadoviewModel {
                     "15% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.foto_joven,
+                    R.drawable.sandwichera_grill,
                     "Sandwichera grill antiadherente",
                     "$ 520",
                     "Llega gratis mañana",
@@ -145,7 +145,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.foto_anciano,
+                    R.drawable.cafetera_oster,
                     "Cafetera de goteo programable 12 tazas",
                     "$ 680",
                     "Envío $ 79",
@@ -156,15 +156,15 @@ class MercadoviewModel {
 
             "juguetes" -> listOf(
                 ProductoMercado(
-                    R.drawable.ic_launcher_background,
-                    "Monopoly Pokémon — juego de mesa",
+                    R.drawable.monopoly_pokemon,
+                    "Monopoly Pokémon - juego de mesa",
                     "$ 649",
                     "Llega gratis mañana",
                     true,
                     "45% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.ic_launcher_foreground,
+                    R.drawable.set_lego_orquideas,
                     "Set LEGO orquídea decorativa para armar",
                     "$ 890",
                     "Llega gratis en 48 h",
@@ -172,7 +172,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.baseline_cruelty_free,
+                    R.drawable.scooter_infantil,
                     "Scooter eléctrico infantil con asiento",
                     "$ 3,200",
                     "Envío $ 150",
@@ -180,15 +180,15 @@ class MercadoviewModel {
                     "18% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.foto_joven,
-                    "Pelota de fútbol #5 cosida a máquina",
+                    R.drawable.balon_futbol,
+                    "Pelota de fútbol cosida a máquina",
                     "$ 280",
                     "Llega gratis mañana",
                     true,
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.foto_anciano,
+                    R.drawable.rompecabezas_1000_piezas,
                     "Rompecabezas 1000 piezas paisaje",
                     "$ 195",
                     "Envío $ 59",
@@ -199,7 +199,7 @@ class MercadoviewModel {
 
             "mascotas" -> listOf(
                 ProductoMercado(
-                    R.drawable.baseline_cruelty_free,
+                    R.drawable.ganador_raza_pequena,
                     "Alimento Ganador adulto razas pequeñas 20 kg",
                     "$ 1,150",
                     "Llega gratis mañana",
@@ -207,7 +207,7 @@ class MercadoviewModel {
                     "30% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.ic_launcher_foreground,
+                    R.drawable.rascador_gato_niveles,
                     "Rascador para gato 3 niveles con juguete",
                     "$ 780",
                     "Llega gratis en 2 días",
@@ -215,7 +215,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.baseline_cruelty_free,
+                    R.drawable.chaleco_talla_m,
                     "Chaleco acolchado para perro talla M",
                     "$ 245",
                     "Envío $ 69",
@@ -223,7 +223,7 @@ class MercadoviewModel {
                     "12% OFF"
                 ),
                 ProductoMercado(
-                    R.drawable.foto_joven,
+                    R.drawable.correa_5_m,
                     "Correa retráctil 5 m con bloqueo",
                     "$ 189",
                     "Llega gratis mañana",
@@ -231,7 +231,7 @@ class MercadoviewModel {
                     null
                 ),
                 ProductoMercado(
-                    R.drawable.foto_anciano,
+                    R.drawable.arenero_gato_filtro,
                     "Arenero cerrado para gato con filtro",
                     "$ 920",
                     "Envío $ 99",
