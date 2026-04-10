@@ -9,4 +9,5 @@ interface ApiInterface {
     @GET("breeds/image/random")
     suspend fun imagenAleatoria(): Response<ImageRandom>
 
+
 }

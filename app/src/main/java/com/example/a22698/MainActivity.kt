@@ -1,5 +1,6 @@
 package com.example.a22698
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,13 +13,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 // import androidx.compose.ui.tooling.preview.Preview
 import com.example.a22698.actividad4.MercadoNav
-// import com.example.a22698.actividad3.EdadNavManager
+//import com.example.a22698.api.DogView
+//import com.example.a22698.api.DogViewModel
+import com.example.a22698.actividad3.EdadNavManager
 // import com.example.a22698.listas.Listvista
 // import com.example.a22698.navegacion.NavManager
 // import com.example.a22698.persistencia.ProfileView
 import com.example.a22698.ui.theme._22698Theme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,8 +35,10 @@ class MainActivity : ComponentActivity() {
                     )*/
 
                     // ProfileView()
-                    MercadoNav(innerPadding = innerPadding)
-                    // EdadNavManager(innerPadding = innerPadding)
+                    // MercadoNav(innerPadding = innerPadding)
+                    EdadNavManager(innerPadding = innerPadding)
+                    // val dogviewModel = DogViewModel()
+                    // DogView(dogviewModel)
                 }
             }
         }
