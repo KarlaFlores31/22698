@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -17,6 +18,7 @@ object EdadInicio
 @Serializable
 data class EdadResultado(val edad: Int)
 
+@Preview(showBackground = true)
 @Composable
 fun EdadNavManager(innerPadding: PaddingValues = PaddingValues(all = 16.dp)) {
     val navController = rememberNavController()

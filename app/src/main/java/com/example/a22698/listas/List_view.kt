@@ -41,7 +41,7 @@ fun Listvista(){
             item{
                 Text(text = "olaolaolaola")
             }
-            items(items = productVM.traerobjetos()){ producto ->
+            items(items = productVM.traerobjetos("chachalaco")){ producto ->
                 Productovista(producto, selected = {
                     Log.d("evento","probando el evento del producto")
                     estado = 1
